@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main() {
+    int n,resul2;
+    cout<<"Enter the array size (a whole natural number) : ";
+    cin>>n;
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        cout<<"Enter "<< i+1 <<" an array element : ";
+        cin>>arr[i];
+    }
+    double sum = 0.0, resul = 0.0;
+    for (int i = 0; i < n; i++) {
+        sum=sum+arr[i];
+    }
+    resul=sum/n;
+    resul2=0;
+    for (int i = 0; i < n; i++) {
+        if (arr[i]<resul){
+            resul2++;
+        }
+    }
+    cout<<"The average value : "<<resul<<"\n";
+    cout<<"The number of elements is less than the average : "<< resul2;
+}
