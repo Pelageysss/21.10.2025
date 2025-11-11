@@ -1,9 +1,10 @@
 #include <iostream>
 #include <deque>
 #include <string>
+using namespace std;
 
 int main() {
-    std::deque<std::string> orders;
+    deque<string> orders;
     orders.push_back("Order1");
     orders.push_back("Order2");
     orders.push_back("Order3");
@@ -13,7 +14,7 @@ int main() {
     orders.pop_front();
     
     for (const auto& order : orders) {
-        std::cout << order << std::endl;
+        cout << order << endl;
     }
     
     return 0;
