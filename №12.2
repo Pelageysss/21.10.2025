@@ -1,0 +1,35 @@
+```cpp
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    std::ifstream in1;
+    std::ifstream in2;
+    std::ofstream out;
+    in1.open("input1.txt");
+    in2.open("input2.txt");
+    out.open("output.txt");
+    
+    if (!in1.is_open() || !in2.is_open() || !out.is_open()) {
+        std::cerr << "Unable to open file!" << std::endl;
+        return 1;
+    }
+    
+    std::string X, Y;
+    std::getline(in1, X);
+    std::getline(in2, Y);
+    
+    if (X.find(Y) != std::string::npos) {
+        out << "yes";
+    } else {
+        out << "no";
+    }
+    
+    in1.close();
+    in2.close();
+    out.close();
+    
+    return 0;
+}
+```
