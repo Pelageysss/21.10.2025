@@ -1,0 +1,33 @@
+```cpp
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <algorithm>
+#include <cctype>
+
+int main() {
+    std::ifstream in;
+    std::ofstream out;
+    in.open("input.txt");
+    out.open("output.txt");
+    
+    if (!in.is_open() || !out.is_open()) {
+        std::cerr << "Unable to open file!" << std::endl;
+        return 1;
+    }
+    
+    std::string text;
+    std::getline(in, text);
+    std::string remove_chars = "useragreement";
+    
+    text.erase(std::remove_if(text.begin(), text.end(), [&](char c) {
+        return remove_chars.find(std::tolower(c)) != std::string::npos;
+    }), text.end());
+    
+    out << text;
+    in.close();
+    out.close();
+    
+    return 0;
+}
+```
