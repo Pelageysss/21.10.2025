@@ -1,0 +1,20 @@
+#include <iostream>
+#include <deque>
+#include <string>
+
+int main() {
+    std::deque<std::string> orders;
+    orders.push_back("Order1");
+    orders.push_back("Order2");
+    orders.push_back("Order3");
+    orders.push_front("UrgentOrder1");
+    orders.push_front("UrgentOrder2");
+    orders.pop_front();
+    orders.pop_front();
+    
+    for (const auto& order : orders) {
+        std::cout << order << std::endl;
+    }
+    
+    return 0;
+}
